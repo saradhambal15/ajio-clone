@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <link
+      rel="icon"
+      href="https://image.apktoy.com/img/e6/com.ril.ajio/icon.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+      data-auto-a11y="true"
+    ></script>
+    <link rel="stylesheet" href="./styles/styleIN.css" />
+    <link rel="stylesheet" href="./styles/myacc.css">
+    <style>
+   
+    </style>
+  </head>
+  <body style="margin: 0">
+    <div id="nav"></div>
+    <!-- Navbar -->
+    <div id="blue"></div>
+    <div id="NAVIGATION"></div>
+
+    <div id="blk"></div>
+    <div id="float">
+      <div>
+        <h1>Please <a href="Index.html">Sign in</a> First</h1>
+      </div>
+    </div>
+    <div id="mid">
+      <div class="left">
+        <h1>My Account</h1>
+        <h2>Orders & Credits</h2>
+        <h3>Orders</h3>
+        <div>
+          <div><a href="" class="list">AJIO Wallet</a><sub>New</sub></div>
+        </div>
+        <div class="clear"></div>
+        <div>
+          <div><a href="" class="list">Invite Friends</a><sub>New</sub></div>
+        </div>
+        <div class="clear"></div>
+        <p id="SU"><sub> Earn Rs.100 AJIO Points for every friend </sub></p>
+        <div><a href="" class="list">My Rewards</a></div>
+        <div><a href="/customerCare.html" class="list">Customer Care</a></div>
+
+        <div class="line"></div>
+
+        <h2>Profile</h2>
+        <div><a href="" class="list">Personal Information</a></div>
+        <div><a href="" class="list">Address Book</a></div>
+        <div><a href="" class="list">Payments</a></div>
+
+        <div class="line"></div>
+      </div>
+      <div class="right">
+        <h1>Orders</h1>
+        <div class="box">
+          <p>
+            Oops! We are unable to load your orders at the movement.Please try
+            again in sometime.
+          </p>
+          <a href="" class="btn">REFRESH PAGE</a>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div id="BOTTOMBAR"></div>
+    </div>
+  </body>
+</html>
+<script>
+  var JJ = localStorage.getItem('ADDRES')
+  JJ = JSON.parse(JJ)
+
+  if (JJ[0] == undefined) {
+    document.getElementById('float').style.display = 'block'
+    document.getElementById('blk').style.display = 'block'
+  }
+</script>
+
+<script type="module">
+  // navbar
+  import navbar from './comp/NAV.js'
+  document.getElementById('NAVIGATION').innerHTML = navbar()
+  // bottombar
+  import bottom from './comp/bottom.js'
+  document.getElementById('BOTTOMBAR').innerHTML = bottom()
+</script>

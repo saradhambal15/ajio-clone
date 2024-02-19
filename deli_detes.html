@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Delivery
+    </title>
+    <link
+      rel="icon"
+      href="https://image.apktoy.com/img/e6/com.ril.ajio/icon.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+      data-auto-a11y="true"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+      #blue {
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 3px;
+        background-color: rgb(44, 65, 82);
+        z-index: 6;
+      }
+      #navbar {
+        overflow: hidden;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        height: 90px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        box-shadow: #e0e0e0 0px 2px, #c9c9c9 0px 5px;
+        z-index: 5;
+      }
+      #ima_head {
+        height: 38px;
+        margin-top: 27px;
+        margin-left: 0%;
+      }
+      #links {
+        margin-top: 54px;
+        margin-left: 15.5%;
+        min-width: 430px;
+      }
+      #links > div > a {
+        color: #3d5060;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+        font-size: 14px;
+        margin: auto;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: fixed;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        top: 94px;
+        left: 14%;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-moz-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-o-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-ms-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .dropdown:hover .dropdown-content {
+        display: flex;
+        animation: fadeIn 1s;
+        -webkit-animation: fadeIn 1s;
+        -moz-animation: fadeIn 1s;
+        -o-animation: fadeIn 1s;
+        -ms-animation: fadeIn 1s;
+      }
+
+      .d1 {
+        width: 1180px;
+        height: 564px;
+        z-index: 15;
+      }
+      .catog {
+        height: 53px;
+        /* background-color: rgb(105, 103, 107); */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 0.5px solid #e0e0e0;
+        border-top: 0.5 solid #e0e0e0;
+      }
+      .catog > p {
+        margin: 10px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(214, 214, 214);
+        font-size: 14px;
+        margin-left: 20px;
+      }
+      .catog > p:nth-child(2) {
+        width: 128px;
+        background-color: rgb(248, 248, 248);
+        color: #3d5060;
+        margin-left: 0px;
+      }
+      .catog > p:nth-child(3) {
+        width: 128px;
+        background-color: rgb(248, 248, 248);
+        color: #3d5060;
+        margin-left: 0px;
+      }
+      .part {
+        height: 511px;
+        width: 100%;
+
+        display: flex;
+      }
+      .part > div {
+        width: 25%;
+        height: 100%;
+        display: block;
+      }
+      .part > div > h5 {
+        margin: 18px;
+        margin-top: 16px;
+        margin-bottom: 10px;
+      }
+      .part > div > p {
+        margin: 18px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        font-size: 14px;
+        color: #3d5060;
+      }
+      .part > div > p > button {
+        color: #3d5060;
+        border: none;
+        background-color: white;
+        cursor: pointer;
+      }
+      #searLink {
+        height: 78px;
+        width: 390px;
+      }
+
+      #mini-lnk {
+        display: flex;
+        padding: 0;
+      }
+      #mini-lnk > a {
+        color: rgb(42, 46, 49);
+
+        font-size: 12px;
+        margin-top: 10px;
+        margin-right: 23px;
+        margin-bottom: 11px;
+      }
+
+#block8 {
+  margin-top: 5px;
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  width: 100%;
+  height: 130px;
+  justify-content: center;
+}
+#block8 > div {
+  width: 25%;
+  text-align: center;
+  font-size: 40px;
+
+}
+#block8 > div > img {
+  width: 40%;
+}
+#block8 > div:nth-child(1){
+  margin-top: -5px;
+}
+      #fnal {
+        height: 520px;
+        width: 100%;
+        background-color: rgb(44, 65, 82);
+      }
+      #fnal > div:nth-child(1) {
+        width: 100%;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        margin-left: 0px;
+      }
+      #fnal > div > div {
+        width: 70%;
+        height: 100%;
+
+        display: flex;
+      }
+      #fnal > div > div > div {
+        width: 25%;
+        height: 100%;
+        display: block;
+        color: white;
+      }
+      #fnal > div > div > div > h4 {
+        margin: 15px;
+        margin-top: 32px;
+        font-weight: 200;
+        margin-left: 10px;
+        color: rgb(204, 204, 204);
+        font-family: 'Lora', serif;
+      }
+      #fnal > div > div > div > p {
+        margin: 15px;
+        margin-top: 13px;
+        margin-bottom: 13px;
+        font-size: 11px;
+        font-weight: 100;
+        margin-left: 10px;
+      }
+      #fnal > div > div > div > p > a {
+        color: rgb(204, 204, 204);
+      }
+      #pay {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+      }
+      #w-line {
+        margin: auto;
+        width: 70%;
+        height: 1px;
+        background-color: rgb(204, 204, 204);
+      }
+      #pay > div {
+        width: 70%;
+        max-height: 32%;
+        justify-content: center;
+      }
+      #pay > div > div:nth-child(1) {
+        width: 70%;
+        height: 100%;
+      }
+      #pay > div > div:nth-child(2) {
+        width: 30%;
+        height: 100%;
+      }
+      #ICO {
+        font-size: 40px;
+      }
+      #ICO > h5 {
+        margin-top: 50px;
+        font-size: 15px;
+        color: rgb(204, 204, 204);
+        margin-bottom: 10px;
+      }
+            #BL {
+        /* height: 900px; */
+        width: 75%;
+        margin: auto;
+        display: flex;
+        font-family: 'Lora', serif;
+
+      }
+      #CRT{
+       margin-top: 50px;
+
+      }
+      #CRT_SW {
+        width: 70%;
+        height: 100%;
+      }
+      #TOT_SW {
+        width: 30%;
+        height: 100%;
+      }
+      #M {
+        display: flex;
+        align-items: baseline;
+        font-family: 'Lora', serif;
+      }
+      #M > p,
+      #M > h2 {
+        padding: 15px;
+        margin-left: 40px;
+      }
+      #BRT {
+        /* height: 80%; */
+        overflow: hidden;
+        width: 95%;
+        margin: auto;
+        margin-top: 10px;
+        margin-left: 50px;
+      }
+      #TOT_SW > div {
+        width: 90%;
+        background-color: rgb(250, 250, 250);
+
+        margin: auto;
+        border: 1px solid rgb(204, 204, 204);
+      }
+      #TOT_SW > div > div:nth-child(1) {
+        width: 90%;
+        margin: auto;
+        height: 50px;
+        background-color: rgb(254, 251, 228);
+        margin-top: 20px;
+        text-align: right;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      #TOT_SW > div > div > p {
+        margin-right: 15px;
+        color: rgb(23, 109, 168);
+        font-weight: 700;
+      }
+      #TOT_SW > div > div:nth-child(2) {
+        margin-left: 18px;
+        margin-top: 10px;
+        font-size: 16px;
+      }
+      #TOT_SW > div > button {
+        width: 100%;
+        height: 60px;
+        border: none;
+        background-color: rgb(213, 162, 73);
+        color: white;
+        font-weight: 600;
+        letter-spacing: 1.1px;
+        font-size: 14px;
+        margin-top: 22px;
+        cursor: pointer;
+      }
+      .BR {
+        display: flex;
+        margin-left: 20px;
+        margin-top: 13px;
+      }
+      .BR > div:nth-child(1) {
+        font-size: 14px;
+        width: 50%;
+      }
+      #bold {
+        font-weight: 700;
+      }
+      #AA,
+      #AB,
+      #AC,
+      #AD {
+        width: 50%;
+        font-size: 13px;
+        text-align: right;
+        margin-right: 20px;
+      }
+      #DET{
+        width: 50%;
+height: 300px;
+margin-left: 100px;
+
+      }
+      #DET>div{
+        margin-top: 10px;
+        margin-left: 50px;
+        text-align: left;
+        font-size: 15px;
+color: #575757;
+      }
+      #DET>h3{
+        margin-top: 15px;
+        margin-left: 40px;
+        margin-bottom: 15px;
+      }
+      #lnl{
+        width: 50%;
+        height: 1px;
+        background-color: #575757;
+        margin-left: 40px;
+        margin-top: 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="blue"></div>
+    <div id="navbar">
+      <a href="/home.html">
+        <img
+          id="ima_head"
+          src="https://assets.ajio.com/static/img/Ajio-Logo.svg"
+          alt="header"
+        />
+      </a>
+      <div id="links">
+      </div>
+      <div id="searLink">
+        <div id="mini-lnk">
+          <a href="" id="user_info">Hi shivang shukla</a>
+          <a href="/myaccount.html">My Account</a>
+          <a href="">Sign Out</a>
+          <a href="/customerCare.html">Customer Care</a>
+        </div>
+
+      </div>
+    </div>
+    <br /><br /><br /><br />
+
+    <!-- front page ui -->
+
+    <div id="CRT">
+      <div id="BL">
+        <div id="CRT_SW">
+          <div id="DET">
+            <h3>Delivery Address</h3>
+            <div id="NM"></div>
+            <div id="EM"></div>
+            <div id="MOB"></div>
+            <div id="SR"></div>
+            <div id="CT"></div>
+            <div id="ST"></div>
+            <div id="PI"></div>
+            <p id="lnl"></p>
+          </div>
+ <div id="es">
+
+ </div>
+          <div id="BRT"></div>
+        </div>
+        <div id="TOT_SW">
+          <div>
+            <div><p>What is AJIO Wallet?</p></div>
+            <div><h4>Order Details</h4></div>
+            <div class="BR">
+              <div>Bag total</div>
+              <div id="AA"></div>
+            </div>
+            <div class="BR">
+              <div>Bag Discount</div>
+              <div id="AB" style="color: rgb(176, 153, 117)"></div>
+            </div>
+            <div class="BR">
+              <div>Delivery</div>
+              <div id="AC" style="color: rgb(176, 153, 117)">FREE</div>
+            </div>
+            <div class="BR" id="bold">
+              <div>Total Amount</div>
+              <div id="AD"></div>
+            </div>
+            <button id="BUT" onclick="store()">PROCEED TO SHIPPING</button>
+          </div>
+        </div>
+      </div>
+
+    <!-- BOTTOM -->
+<div id="BOTTOMBAR"></div>
+
+  </body>
+</html>
+<script>
+var aa=localStorage.getItem("ADDRES")
+aa = JSON.parse(aa)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById("NM").innerHTML = aa[0].Name
+document.getElementById("EM").innerHTML = aa[0].email
+document.getElementById("MOB").innerHTML = aa[0].MOB
+document.getElementById("SR").innerHTML = aa[0].str
+document.getElementById("CT").innerHTML = aa[0].city
+document.getElementById("ST").innerHTML = aa[0].state
+document.getElementById("PI").innerHTML = aa[0].PIN
+console.log(aa);
+
+
+
+  if (localStorage.getItem('CART') === null) {
+    localStorage.setItem('CART', JSON.stringify([]))
+  }
+
+  var A = document.getElementById('BRT')
+  var B = document.getElementById('EMP')
+  var C = localStorage.getItem('CART')
+  C = JSON.parse(C)
+  console.log(C);
+  var XX =   C.reduce(function(accumulator, currentValue) {
+  return accumulator + Number(currentValue.price);
+}, 0)
+console.log(XX);
+var AA = document.getElementById("AA")
+var Rand =  Math.ceil(Math.random()*1000)
+var yy = Rand +XX
+AA.innerHTML  = "Rs. "+yy
+var AB = document.getElementById("AB")
+AB.innerHTML = "Rs. "+ Rand
+var zz = 0
+var AC = document.getElementById("AC")
+if (XX>599) {
+  zz = 0
+}else{
+  zz = Math.ceil(Math.random()*100)
+  AC.innerHTML = "Rs. "+zz
+}
+var AD = document.getElementById("AD")
+AD.innerHTML = "Rs. "+ JSON.parse(localStorage.getItem("PR"))
+
+function store() {
+  window.open('checkout.html')
+}
+</script>
+<script>
+  function BB() {
+  if (localStorage.getItem('ADDRES') !== undefined) {
+    var azz = localStorage.getItem('ADDRES')
+    azz = JSON.parse(azz)
+
+    setTimeout(function () {
+  var ar = document.getElementById('user_info')
+  ar.innerHTML = 'Hi ' + azz[0].Name
+ var arz = document.getElementById('s_IN')
+  arz.innerHTML = 'Sign Out'
+}, 200)
+  }
+}
+BB()
+</script>
+<script type="text/javascript" src="./data/DATA.js"></script>
+
+
+
+<script type="module">
+  // navbar
+
+  // bottombar
+  import bottom from './comp/bottom.js'
+  document.getElementById('BOTTOMBAR').innerHTML = bottom()
+</script>
+<script src="./comp/signin.js"></script>

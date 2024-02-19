@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+      data-auto-a11y="true"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0%;
+      }
+      #nav {
+        background-color: lightgray;
+        height: 90px;
+      }
+      * {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+      #blue {
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 3px;
+        background-color: rgb(44, 65, 82);
+        z-index: 6;
+      }
+      #navbar {
+        overflow: hidden;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        height: 90px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        box-shadow: #e0e0e0 0px 2px, #c9c9c9 0px 5px;
+        z-index: 5;
+      }
+      #ima_head {
+        height: 38px;
+        margin-top: 27px;
+        margin-left: 0%;
+      }
+      #links {
+        margin-top: 54px;
+        margin-left: 15.5%;
+        min-width: 400px;
+      }
+      #links > div > a {
+        color: #3d5060;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+        font-size: 14px;
+        margin: auto;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: fixed;
+        background-color: #f9f9f9;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        top: 94px;
+        left: 14%;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-moz-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-o-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-ms-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .dropdown:hover .dropdown-content {
+        display: flex;
+        animation: fadeIn 1s;
+        -webkit-animation: fadeIn 1s;
+        -moz-animation: fadeIn 1s;
+        -o-animation: fadeIn 1s;
+        -ms-animation: fadeIn 1s;
+      }
+
+      .d1 {
+        width: 1180px;
+        height: 564px;
+        z-index: 15;
+      }
+      .catog {
+        height: 53px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 0.5px solid #e0e0e0;
+        border-top: 0.5 solid #e0e0e0;
+      }
+      .catog > p {
+        margin: 10px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(214, 214, 214);
+        font-size: 14px;
+        margin-left: 20px;
+      }
+      .catog > p:nth-child(2) {
+        width: 128px;
+        background-color: rgb(248, 248, 248);
+        color: #3d5060;
+        margin-left: 0px;
+      }
+      .catog > p:nth-child(3) {
+        width: 128px;
+        background-color: rgb(248, 248, 248);
+        color: #3d5060;
+        margin-left: 0px;
+      }
+      .part {
+        height: 511px;
+        width: 100%;
+
+        display: flex;
+      }
+      .part > div {
+        width: 25%;
+        height: 100%;
+        display: block;
+      }
+      .part > div > h5 {
+        margin: 18px;
+        margin-top: 16px;
+        margin-bottom: 10px;
+      }
+      .part > div > p {
+        margin: 18px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        font-size: 14px;
+        color: #3d5060;
+      }
+      .part > div > p > a {
+        color: #3d5060;
+      }
+      #searLink {
+        height: 78px;
+        width: 390px;
+      }
+
+      #mini-lnk {
+        display: flex;
+        padding: 0;
+      }
+      #mini-lnk > a {
+        color: rgb(42, 46, 49);
+
+        font-size: 12px;
+        margin-top: 10px;
+        margin-right: 23px;
+        margin-bottom: 11px;
+      }
+      #sear_block {
+        display: flex;
+      }
+      #inp {
+        height: 30px;
+        width: 248px;
+        border-radius: 50px;
+        border: 1px solid black;
+        margin-left: 10px;
+        margin-bottom: 13px;
+        background-color: #fffded;
+        margin-top: 10px;
+      }
+      .A {
+        position: fixed;
+        font-size: 15px;
+        overflow: hidden;
+        z-index: 5;
+        right: 380px;
+        top: 54px;
+      }
+      #closet,
+      #cart {
+        height: 35px;
+        width: 35px;
+        background-color: #2c4152;
+        margin-top: 12px;
+        margin-left: 10px;
+        border-radius: 100%;
+        color: white;
+        text-align: center;
+      }
+      #cart {
+        margin-left: 10px;
+      }
+      #cart > p,
+      #closet > p {
+        font-size: 0;
+        margin-top: 7px;
+      }
+      .header-text {
+        margin-bottom: 20px;
+        font-size: 32px;
+        font-family: 'Lora', serif;
+        text-align: center;
+        padding: 20px;
+        font-weight: 600;
+        padding: 8px 0 5px;
+      }
+      .empty-msg {
+        margin-bottom: 30px;
+        font-size: 18px;
+        text-align: center;
+        color: #585858;
+        font-family: 'Lora', serif;
+        font-family: 'Source Sans Pro', sans-serif;
+      }
+      .tag-line {
+        margin-bottom: 20px;
+        font-size: 14px;
+        text-align: center;
+        font-family: 'Source Sans Pro';
+        color: #888888;
+      }
+      a:active,
+      a:hover,
+      a:link,
+      a:visited {
+        color: #2c4152;
+        outline: none;
+        text-decoration: none;
+      }
+      .cart-shopping {
+        background-color: #d5a249;
+        padding: 0 20px;
+        display: inline-block;
+        text-transform: uppercase;
+        color: #fff !important;
+        font-size: 14px;
+        font-family: SourceSansPro;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        height: 50px;
+        line-height: 50px;
+        margin: auto;
+        border: 0;
+      }
+
+      .cart-div {
+        display: flex;
+      }
+
+      #block8 {
+        display: flex;
+        width: 100%;
+        height: 130px;
+        justify-content: center;
+      }
+      #block8 > div {
+        width: 25%;
+        text-align: center;
+        font-size: 40px;
+        margin-top: 20px;
+      }
+      #block8 > div > p {
+        margin-top: 15px;
+        font-size: 16px;
+        font-family: 'Lora', serif;
+        font-weight: 600;
+      }
+      #fnal {
+        height: 520px;
+        width: 100%;
+        background-color: rgb(44, 65, 82);
+      }
+      #fnal > div:nth-child(1) {
+        width: 100%;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        margin-left: 0px;
+      }
+      #fnal > div > div {
+        width: 70%;
+        height: 100%;
+
+        display: flex;
+      }
+      #fnal > div > div > div {
+        width: 25%;
+        height: 100%;
+        display: block;
+        color: white;
+      }
+      #fnal > div > div > div > h4 {
+        margin: 15px;
+        margin-top: 32px;
+        font-weight: 200;
+        margin-left: 10px;
+        color: rgb(204, 204, 204);
+        font-family: 'Lora', serif;
+      }
+      #fnal > div > div > div > p {
+        margin: 15px;
+        margin-top: 13px;
+        margin-bottom: 13px;
+        font-size: 11px;
+        font-weight: 100;
+        margin-left: 10px;
+      }
+      #fnal > div > div > div > p > a {
+        color: rgb(204, 204, 204);
+      }
+      #pay {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+      }
+      #w-line {
+        margin: auto;
+        width: 70%;
+        height: 1px;
+        background-color: rgb(204, 204, 204);
+      }
+      #pay > div {
+        width: 70%;
+        max-height: 32%;
+        justify-content: center;
+      }
+      #pay > div > div:nth-child(1) {
+        width: 70%;
+        height: 100%;
+      }
+      #pay > div > div:nth-child(2) {
+        width: 30%;
+        height: 100%;
+      }
+      #ICO {
+        font-size: 40px;
+      }
+      #ICO > h5 {
+        margin-top: 50px;
+        font-size: 15px;
+        color: rgb(204, 204, 204);
+        margin-bottom: 10px;
+      }
+      #rmv {
+        min-height: 275px;
+      }
+
+      #rmv > div:nth-child(1) {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="blue"></div>
+    <div id="navbar">
+      <a href="/home.html">
+        <img
+          id="ima_head"
+          src="https://assets.ajio.com/static/img/Ajio-Logo.svg"
+          alt="header"
+        />
+      </a>
+      <div id="links">
+        <div class="dropdown">
+          <a class="active" href="">MEN</a>
+          <div class="dropdown-content">
+            <div class="d1">
+              <div class="catog">
+                <p>Shop By:</p>
+                <p>CATEGORIES</p>
+                <p>BRANDS</p>
+              </div>
+              <div class="part">
+                <div>
+                  <h5>NEW IN: CLOTHING</h5>
+                  <h5>NEW IN: FOOTWEAR & ACCS</h5>
+                  <h5>INTERNATIONAL BRANDS</h5>
+                  <h5>WESTERN WEAR</h5>
+                  <p><a href="">Jackets & Coats</a></p>
+                  <p><a href="">Jeans</a></p>
+                  <p><a href="">Shirts</a></p>
+                  <p><a href="">Shorts & 3/4ths</a></p>
+                  <p><a href="">Seatshirts & Hoodies</a></p>
+                  <p><a href="">Tracks Pants</a></p>
+                  <p><a href="">Trousers & Pants</a></p>
+                  <p><a href="">T-Shirts</a></p>
+                  <h5>ETHNIC & FESTIVE</h5>
+                  <p><a href="">Kurtas And Shirts</a></p>
+                  <p><a href="">Nehru Jackets</a></p>
+                </div>
+                <div>
+                  <h5>FOOTWEAR</h5>
+                  <p><a href="">Casual Shoes</a></p>
+                  <p><a href="">Flip-Flops & Slippers</a></p>
+                  <p><a href="">Formal Shoes</a></p>
+                  <p><a href="">Sandals</a></p>
+                  <p><a href="">Sneakers</a></p>
+                  <p><a href="">Sports Shoes</a></p>
+                  <h5>NIGHT & LOUNGEWEAR</h5>
+                  <p><a href="">Briefs</a></p>
+                  <p><a href="">Trunks</a></p>
+                  <p><a href="">Vests</a></p>
+                </div>
+                <div>
+                  <h5>ACCESSORIES</h5>
+                  <p><a href="">Backpacks</a></p>
+                  <p><a href="">Bags & Wallets</a></p>
+                  <p><a href="">Belts</a></p>
+                  <p><a href="">Caps & Hats</a></p>
+                  <p><a href="">Fashion Accesories</a></p>
+                  <p><a href="">Socks</a></p>
+                  <p><a href="">Sunglasses & Frames</a></p>
+                  <p><a href="">Wallets</a></p>
+                  <p><a href="">Watches</a></p>
+                  <h5>WINTERWEAR</h5>
+                  <h5>PRECIOUS JEWELLERY</h5>
+                  <h5>HOME & KITCHEN</h5>
+                  <h5>GROOMING</h5>
+                </div>
+                <div>
+                  <h5>FEATURED</h5>
+                  <p><a href="">Bags Under 1499</a></p>
+                  <p><a href="">Footwear Under 1499</a></p>
+                  <p><a href="">Jeans Under 1199</a></p>
+                  <p><a href="">Shorts & 3/4ths Under 699</a></p>
+                  <h5>#AJIORECOMMENDS</h5>
+                  <p><a href="">Play Time</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="active" href="">WOMEN</a>
+          <div class="dropdown-content">
+            <div class="d1">
+              <div class="catog">
+                <p>Shop By:</p>
+                <p>CATEGORIES</p>
+                <p>BRANDS</p>
+              </div>
+              <div class="part">
+                <div>
+                  <h5>NEW IN: CLOTHING</h5>
+                  <h5>NEW IN: FOOTWEAR & ACCS</h5>
+                  <h5>WESTERN WEAR</h5>
+                  <p><a href="">Tops</a></p>
+                  <p><a href="">T-Shirts</a></p>
+                  <p><a href="">Jeans & Jeggings</a></p>
+                  <p><a href="">Dresses</a></p>
+                  <p><a href="">Trousers & Pants</a></p>
+                  <p><a href="">Shirts</a></p>
+                  <p><a href="">Tracks Pants</a></p>
+                  <p><a href="">Skirts & Shorts</a></p>
+                  <p><a href="">Jackets & Coats</a></p>
+                  <p><a href="">Jumpsuits & Playsuits</a></p>
+                  <p><a href="">Shrugs & Boleros</a></p>
+                  <p><a href="">Seatshirts & Hoodies</a></p>
+                  <p><a href="">Sweater & Cardigans</a></p>
+                </div>
+                <div>
+                  <h5>ETHNIC WEAR</h5>
+                  <p><a href="">Kurtas</a></p>
+                  <p><a href="">Salwars & Churidars</a></p>
+                  <p><a href="">Kurtis & Tunics</a></p>
+                  <p><a href="">Sarees</a></p>
+                  <p><a href="">Dupattas</a></p>
+                  <p><a href="">Dress Material</a></p>
+                  <p><a href="">Kurta Suit sets</a></p>
+                  <p><a href="">Blouses</a></p>
+                  <p><a href="">Leggings</a></p>
+                  <p><a href="">Jackets & Shrugs</a></p>
+                  <p><a href="">Shirts & Ghagras</a></p>
+                  <p><a href="">Shawls & Wraps</a></p>
+                  <p><a href="">Palazzos & Culottes</a></p>
+                  <h5>LINGERIE & INNERWEAR</h5>
+                  <p><a href="">Bras</a></p>
+                  <p><a href="">Panties</a></p>
+                  <p><a href="">Camisoles & Slips</a></p>
+                </div>
+                <div>
+                  <h5>WINTER</h5>
+                  <h5>PRECIOUS JEWELLERY</h5>
+                  <h5>HOME & KITCHEN</h5>
+                  <h5>NIGHT & LOUNGEWEAR</h5>
+                  <h5>ATHLEISURE</h5>
+                  <h5>BEAUTY</h5>
+                  <h5>FUSION WEAR</h5>
+                  <p><a href="">Dresses & Gowns</a></p>
+                  <p><a href="">Kurtas</a></p>
+                  <p><a href="">Kurtis & Tunics</a></p>
+                  <p><a href="">Pants & Shorts</a></p>
+                  <p><a href="">Jackets & Shrugs</a></p>
+                  <p><a href="">Shirts, Tops & Tunics</a></p>
+                  <h5>FASHION JEWELLERY</h5>
+                  <h5>BAGS, BELTS & WALLETS</h5>
+                </div>
+                <div>
+                  <h5>FOOTWEAR</h5>
+                  <p><a href="">Casual Shoes</a></p>
+                  <p><a href="">Flats Sandals</a></p>
+                  <p><a href="">Sports Shoes</a></p>
+                  <p><a href="">Flip Flop & Slippers</a></p>
+                  <p><a href="">Heeled Sandals</a></p>
+                  <p><a href="">Heeled Shoes</a></p>
+                  <p><a href="">Boots</a></p>
+                  <h5>SUNGLASSES & FRAMES</h5>
+                  <h5>WATCHES</h5>
+                  <h5>FEATURED</h5>
+                  <p><a href="">Dresses Under 999</a></p>
+                  <p><a href="">Footwear Under 799</a></p>
+                  <p><a href="">Sarees Under 799</a></p>
+                  <p><a href="">Top Under 499</a></p>
+                  <h5>#AJIORECOMMENDS</h5>
+                  <p><a href="">Play Time</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="active" href="">KIDS</a>
+          <div class="dropdown-content">
+            <div class="d1">
+              <div class="catog">
+                <p>Shop By:</p>
+                <p>CATEGORIES</p>
+                <p>BRANDS</p>
+              </div>
+              <div class="part">
+                <div>
+                  <h5>NEW IN: CLOTHING</h5>
+                  <h5>NEW IN: FOOTWEAR & ACCS</h5>
+                  <h5>INNERWEAR & SLEEPWEAR</h5>
+                  <h5>BOYS</h5>
+                  <p><a href="">Denims & Trousers</a></p>
+                  <p><a href="">Joggers & Tracks Pants</a></p>
+                  <p><a href="">Outerwear</a></p>
+                  <p><a href="">Shirts</a></p>
+                  <p><a href="">Shorts & 3/4ths</a></p>
+                  <p><a href=""></a></p>
+                  <h5>SHOP BY AGE</h5>
+                  <p><a href="">0-2 Years</a></p>
+                  <p><a href="">2-5 Years</a></p>
+                  <p><a href="">5-10 Years</a></p>
+                  <p><a href="">10-14 Years</a></p>
+                </div>
+                <div>
+                  <h5>FEATURED</h5>
+                  <p><a href="">Denims Under 799</a></p>
+                  <p><a href="">Shirts Under 599</a></p>
+                  <p><a href="">T-Shirts Under 399</a></p>
+                  <h5>GIRLS</h5>
+                  <p><a href="">Dresses & Frocks</a></p>
+                  <p><a href="">Jeans & Jeggings</a></p>
+                  <p><a href="">Leggings</a></p>
+                  <p><a href="">Outerwear</a></p>
+                  <p><a href="">Skirts & Shorts</a></p>
+                  <p><a href="">Tops & T-Shirts</a></p>
+                  <h5>SHOP BY AGE</h5>
+                  <p><a href="">2-5 Years</a></p>
+                  <p><a href="">5-10 Years</a></p>
+                  <p><a href="">10-14 Years</a></p>
+                  <h5>FEATURED</h5>
+                  <p><a href="">Dresses Under 499</a></p>
+                  <p><a href="">Tops Under 399</a></p>
+                </div>
+                <div>
+                  <h5>ACCESSORIES</h5>
+                  <p><a href="">Backpacks</a></p>
+                  <p><a href="">Bags & Wallets</a></p>
+                  <p><a href="">Belts</a></p>
+                  <p><a href="">Caps & Hats</a></p>
+                  <p><a href="">Fashion Accesories</a></p>
+                  <p><a href="">Socks</a></p>
+                  <p><a href="">Sunglasses & Frames</a></p>
+                  <p><a href="">Wallets</a></p>
+                  <p><a href="">Watches</a></p>
+                  <h5>WINTERWEAR</h5>
+                  <h5><a href="">PRECIOUS JEWELLERY</a></h5>
+                  <h5>HOME & KITCHEN</h5>
+                  <h5>GROOMING</h5>
+                </div>
+                <div>
+                  <h5>FEATURED</h5>
+                  <p><a href="">Bags Under 1499</a></p>
+                  <p><a href="">Footwear Under 1499</a></p>
+                  <p><a href="">Jeans Under 1199</a></p>
+                  <p><a href="">Shorts & 3/4ths Under 699</a></p>
+                  <h5>#AJIORECOMMENDS</h5>
+                  <p><a href="">Play Time</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="active" href="">INDIE</a>
+          <div class="dropdown-content">
+            <div class="d1">
+              <div class="catog">
+                <p>Shop By:</p>
+                <p>CATEGORIES</p>
+                <p>BRANDS</p>
+              </div>
+              <div class="part">
+                <div>
+                  <h5>NEW IN: CLOTHING</h5>
+                  <h5>NEW IN: FOOTWEAR & ACCS</h5>
+                  <h5>INTERNATIONAL BRANDS</h5>
+                  <h5>WESTERN WEAR</h5>
+                  <p><a href="">Jackets & Coats</a></p>
+                  <p><a href="">Jeans</a></p>
+                  <p><a href="">Shirts</a></p>
+                  <p><a href="">Shorts & 3/4ths</a></p>
+                  <p><a href="">Seatshirts & Hoodies</a></p>
+                  <p><a href="">Tracks Pants</a></p>
+                  <p><a href="">Trousers & Pants</a></p>
+                  <p><a href="">T-Shirts</a></p>
+                  <h5>ETHNIC & FESTIVE</h5>
+                  <p><a href="">Kurtas And Shirts</a></p>
+                  <p><a href="">Nehru Jackets</a></p>
+                </div>
+                <div>
+                  <h5>FOOTWEAR</h5>
+                  <p><a href="">Casual Shoes</a></p>
+                  <p><a href="">Flip-Flops & Slippers</a></p>
+                  <p><a href="">Formal Shoes</a></p>
+                  <p><a href="">Sandals</a></p>
+                  <p><a href="">Sneakers</a></p>
+                  <p><a href="">Sports Shoes</a></p>
+                  <h5>NIGHT & LOUNGEWEAR</h5>
+                  <p><a href="">Briefs</a></p>
+                  <p><a href="">Trunks</a></p>
+                  <p><a href="">Vests</a></p>
+                </div>
+                <div>
+                  <h5>ACCESSORIES</h5>
+                  <p><a href="">Backpacks</a></p>
+                  <p><a href="">Bags & Wallets</a></p>
+                  <p><a href="">Belts</a></p>
+                  <p><a href="">Caps & Hats</a></p>
+                  <p><a href="">Fashion Accesories</a></p>
+                  <p><a href="">Socks</a></p>
+                  <p><a href="">Sunglasses & Frames</a></p>
+                  <p><a href="">Wallets</a></p>
+                  <p><a href="">Watches</a></p>
+                  <h5>WINTERWEAR</h5>
+                  <h5><a href="">PRECIOUS JEWELLERY</a></h5>
+                  <h5>HOME & KITCHEN</h5>
+                  <h5>GROOMING</h5>
+                </div>
+                <div>
+                  <h5>FEATURED</h5>
+                  <p><a href="">Bags Under 1499</a></p>
+                  <p><a href="">Footwear Under 1499</a></p>
+                  <p><a href="">Jeans Under 1199</a></p>
+                  <p><a href="">Shorts & 3/4ths Under 699</a></p>
+                  <h5>#AJIORECOMMENDS</h5>
+                  <p><a href="">Play Time</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="active" href="">HOME & KITCHEN</a>
+          <div class="dropdown-content" id="men">
+            <div class="d1">
+              <div class="catog">
+                <p>Shop By:</p>
+                <p>CATEGORIES</p>
+                <p>BRANDS</p>
+              </div>
+              <div class="part">
+                <div>
+                  <h5>NEW IN: CLOTHING</h5>
+                  <h5>NEW IN: FOOTWEAR & ACCS</h5>
+                  <h5>INTERNATIONAL BRANDS</h5>
+                  <h5>WESTERN WEAR</h5>
+                  <p>Jackets & Coats</p>
+                  <p>Jeans</p>
+                  <p>Shirts</p>
+                  <p>Shorts & 3/4ths</p>
+                  <p>Seatshirts & Hoodies</p>
+                  <p>Tracks Pants</p>
+                  <p>Trousers & Pants</p>
+                  <p>T-Shirts</p>
+                  <h5>ETHNIC & FESTIVE</h5>
+                  <p>Kurtas And Shirts</p>
+                  <p>Nehru Jackets</p>
+                </div>
+                <div>
+                  <h5>FOOTWEAR</h5>
+                  <p>Casual Shoes</p>
+                  <p>Flip-Flops & Slippers</p>
+                  <p>Formal Shoes</p>
+                  <p>Sandals</p>
+                  <p>Sneakers</p>
+                  <p>Sports Shoes</p>
+                  <h5>NIGHT & LOUNGEWEAR</h5>
+                  <p>Briefs</p>
+                  <p>Trunks</p>
+                  <p>Vests</p>
+                </div>
+                <div>
+                  <h5>ACCESSORIES</h5>
+                  <p>Backpacks</p>
+                  <p>Bags & Wallets</p>
+                  <p>Belts</p>
+                  <p>Caps & Hats</p>
+                  <p>Fashion Accesories</p>
+                  <p>Socks</p>
+                  <p>Sunglasses & Frames</p>
+                  <p>Wallets</p>
+                  <p>Watches</p>
+                  <h5>WINTERWEAR</h5>
+                  <h5>PRECIOUS JEWELLERY</h5>
+                  <h5>HOME & KITCHEN</h5>
+                  <h5>GROOMING</h5>
+                </div>
+                <div>
+                  <h5>FEATURED</h5>
+                  <p>Bags Under 1499</p>
+                  <p>Footwear Under 1499</p>
+                  <p>Jeans Under 1199</p>
+                  <p>Shorts & 3/4ths Under 699</p>
+                  <h5>#AJIORECOMMENDS</h5>
+                  <p>Play Time</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="searLink">
+        <div id="mini-lnk">
+          <a href="/myaccount.html">My Account</a>
+          <a href="/customerCare.html">Customer Care</a>
+        </div>
+        <div id="sear_block">
+          <form>
+            <input type="text" placeholder="   SearchAJIO" id="inp" />
+          </form>
+          <div class="A">
+          
+          </div>
+          <a href="/closet.html" id="closet">
+            <p></p>
+            <i class="fas fa-caret-up"></i>
+          </a>
+          <a href="/bag.html" id="cart">
+            <p></p>
+            <i class="fas fa-shopping-bag"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="nav">
+      <p>navigation item</p>
+    </div>
+
+    <div id="rmv">
+      <div>
+        <h1 class="header-text">My Closet</h1>
+      </div>
+      <div id="CLOSET">
+        <div>
+          <p class="empty-msg">Your Closet is empty!!</p>
+        </div>
+        <div class="tag-line">
+          ADD A FEW PRODUCTS AND THEN EXPLORE THE COOLEST WAY TO SHOP CLOTHES
+          ONLINE!
+        </div>
+        <div class="cart-div">
+          <button  onclick="window.open('Index.html')" class="cart-shopping">Continue Shopping</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM -->
+
+    <div id="block8">
+      <div>
+        <i class="fas fa-sync-alt"></i>
+        <p>EASY EXCHANGE<sup>*</sup></p>
+      </div>
+      <div>
+        <i class="fas fa-hand-holding-heart"></i>
+        <p>100% HANDPICKED</p>
+      </div>
+      <div>
+        <i class="fas fa-check-circle"></i>
+        <p>ASSURED QUALITY</p>
+      </div>
+    </div>
+
+    <div id="fnal">
+      <div>
+        <div>
+          <div>
+            <h4>Ajio</h4>
+            <p><a href="">Who We Are</a></p>
+            <p><a href="">Join Our Team</a></p>
+            <p><a href="">Terms & Conditions</a></p>
+            <p><a href="">We Respect Your Privacy</a></p>
+            <p><a href="">Fees & Payments</a></p>
+            <p><a href="">Returns & Refunds</a></p>
+            <p><a href="">Promotions Terms & Conditions</a></p>
+          </div>
+          <div>
+            <h4>Help</h4>
+            <p><a href="">Track Your Order</a></p>
+            <p><a href="">Frequently Asked Questions</a></p>
+            <p><a href>Returns</a></p>
+            <p><a href="">Cancellation</a></p>
+            <p><a href="">Payments</a></p>
+            <p><a href="">Customer Care</a></p>
+            <p><a href="">How Do I Redeem My Coupon</a></p>
+          </div>
+          <div>
+            <h4>Shop by</h4>
+            <p><a href="">Men</a></p>
+            <p><a href="">Women</a></p>
+            <p><a href="">Kids</a></p>
+            <p><a href="">Indie</a></p>
+            <p><a href="">Stores</a></p>
+            <p><a href="">New Arrivals</a></p>
+            <p><a href="">Brand Directory</a></p>
+            <p><a href="">Home</a></p>
+            <p><a href="">Collections</a></p>
+          </div>
+          <div>
+            <h4>Follow us</h4>
+            <p><a href="">Facebook</a></p>
+            <p><a href="">Instagram</a></p>
+            <p><a href="">Twitter</a></p>
+            <p><a href="">Pinterest</a></p>
+          </div>
+        </div>
+      </div>
+      <div id="w-line"></div>
+      <div id="pay">
+        <div>
+          <div id="ICO">
+            <h5>Payment methods</h5>
+            <i class="fas fa-university"></i> <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fas fa-money-bill-wave"></i>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

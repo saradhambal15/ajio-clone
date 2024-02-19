@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .upper {
+        margin: auto;
+        background-color: white;
+        height: 30px;
+        padding-top: 50px;
+        padding-left: 10%;
+      }
+      .upper a {
+        text-decoration: none;
+        font-size: small;
+        font-weight: 400;
+        color: #afacac;
+      }
+      .left {
+        width: 20%;
+        margin-left: 10%;
+        background-color: white;
+        height: 100vh;
+        float: left;
+      }
+      .right {
+        width: 60%;
+        margin-left: 1%;
+        background-color: white;
+        height: 100vh;
+        float: left;
+        text-align: center;
+      }
+      .left div {
+        margin: 10px;
+        height: 40px;
+      }
+      .clear {
+        clear: both;
+      }
+      #flex {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin: auto;
+      }
+      #flex div {
+        flex-basis: 25%;
+      }
+      #grid div {
+        float: left;
+      }
+      .bordericon {
+        border: 1px solid rgb(92, 88, 88);
+        padding: 2px 15px;
+      }
+      #icon {
+        float: left;
+        margin: 2px;
+      }
+
+      .right hr {
+        background-color: rgb(245, 238, 238);
+        opacity: 0.2;
+        margin: 20px;
+      }
+
+      /* ---------dropdown------- */
+      /* #myDropdown{
+    overflow-y: scroll;
+} */
+      .dropbtn {
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        font-size: large;
+        font-weight: 700;
+        margin-top: 20px;
+      }
+      #dropdown-content1 {
+        display: none;
+        background-color: white;
+        min-width: 160px;
+        height: auto;
+
+        /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+        flex-direction: column;
+      }
+
+      #dropdown-content1 a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      #dropdown-content2 {
+        display: none;
+        background-color: white;
+        min-width: 160px;
+        height: auto;
+        /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+      }
+
+      #dropdown-content2 a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      /* .dropdown a:hover {background-color: #ddd;} */
+      .black {
+        outline: black;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: black;
+      }
+      .navy {
+        outline: rgb(14, 14, 43);
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: rgb(14, 14, 43);
+      }
+      .blue {
+        outline: blue;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: blue;
+      }
+      .grey {
+        outline: grey;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: grey;
+      }
+      #gen1,
+      #cat1,
+      .pri1,
+      .bra1,
+      .occ1,
+      .dis1,
+      .col1,
+      .sf1,
+      .slee1,
+      .band1,
+      .pat1,
+      .cha1,
+      .colo1,
+      .sha1,
+      .fab1,
+      .char1 {
+        display: none;
+      }
+
+      .show {
+        display: block;
+      }
+      .left hr {
+        background-color: rgb(245, 238, 238);
+        opacity: 0.2;
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body style="margin: 0">
+    <div class="upper">
+      <a href="">HOME /</a>
+      <a href="">MEN /</a>
+      <a href="">WESTERN WEAR /</a>
+      <a href="">SHIRTS</a>
+    </div>
+    <section id="mid">
+      <div class="left">
+        <button onclick="myFunction1()" class="dropbtn">
+          Refine By
+          <i class="fas fa-chevron-down" style="margin-left: 121px"></i>
+        </button>
+        <div id="dropdown-content1">
+          <a id="gen" href=""
+            >+ Gender
+            <p id="gen1"><input type="checkbox" /> <label>Men (5)</label></p>
+          </a>
+          <hr />
+
+          <a href="" id="cat"
+            >+ Category
+            <p id="cat1"><input type="checkbox" /> <label>Jeans (14)</label></p>
+          </a>
+          <hr />
+          <a href="" id="pri"
+            >+ Price
+            <p class="pri1">
+              <input type="checkbox" /> <label>Below Rs.500 (14)</label>
+            </p>
+            <p class="pri1">
+              <input type="checkbox" /> <label>Rs.500-1000 (1,377)</label>
+            </p>
+            <p class="pri1">
+              <input type="checkbox" /> <label>Rs.1001-1500 (427)</label>
+            </p>
+            <p class="pri1">
+              <input type="checkbox" /> <label>Rs.1501-2000 (140)</label>
+            </p>
+            <p class="pri1">
+              <input type="checkbox" /> <label>Rs.2001-2500 (34)</label>
+            </p>
+          </a>
+          <hr />
+          <a href="" id="bra"
+            >+ Brands
+            <p class="bra1">
+              <input type="checkbox" /> <label>LOUIS PHILIPPE (1,891)</label>
+            </p>
+            <p class="bra1">
+              <input type="checkbox" /> <label>BLACKBERRYS (1,377)</label>
+            </p>
+          </a>
+          <hr />
+          <a href="" id="occ"
+            >+ Occasion
+            <p class="occ1">
+              <input type="checkbox" /> <label>Active (212)</label>
+            </p>
+            <p class="occ1">
+              <input type="checkbox" /> <label>Casual (40)</label>
+            </p>
+            <p class="occ1">
+              <input type="checkbox" /> <label>Evening (200)</label>
+            </p>
+            <p class="occ1">
+              <input type="checkbox" /> <label>Morning (165)</label>
+            </p>
+          </a>
+          <hr />
+          <a href="" id="dis"
+            >+ Discount
+            <p class="dis1">
+              <input type="checkbox" /> <label>0-20% (8,687)</label>
+            </p>
+            <p class="dis1">
+              <input type="checkbox" /> <label>21-30% (5,687)</label>
+            </p>
+            <p class="dis1">
+              <input type="checkbox" /> <label>31-40% (3,687)</label>
+            </p>
+            <p class="dis1">
+              <input type="checkbox" /> <label>41-50% (8,615)</label>
+            </p>
+          </a>
+          <hr />
+          <a href="" id="col"
+            >+ Colors
+            <p class="col1"><input class="black" /> <label>Black</label></p>
+            <p class="col1"><input class="blue" /> <label>Blue</label></p>
+            <p class="col1"><input class="grey" /> <label>Grey</label></p>
+            <p class="col1"><input class="navy" /> <label>Navy</label></p>
+          </a>
+          <hr />
+          <a href="" id="sf"
+            >+ Size & Fit
+            <p class="sf1"><input type="checkbox" /> <label>28(4)</label></p>
+            <p class="sf1"><input type="checkbox" /> <label>30(2)</label></p>
+            <p class="sf1"><input type="checkbox" /> <label>32(1)</label></p>
+            <p class="sf1"><input type="checkbox" /> <label>34(2)</label></p>
+            <p class="sf1"><input type="checkbox" /> <label>36(1)</label></p>
+          </a>
+        </div>
+
+        <button
+          onclick="myFunction2()"
+          class="dropbtn"
+          style="margin-left: 10px; font-weight: 500"
+        >
+          More Fillers<i
+            class="fas fa-chevron-down"
+            style="margin-left: 107px"
+          ></i>
+        </button>
+        <div id="dropdown-content2">
+          <a href="" id="slee"
+            >+ Sleeve
+            <p class="slee1">
+              <input type="checkbox" /> <label>Full-length(73)</label>
+            </p>
+            <p class="slee1">
+              <input type="checkbox" /> <label>Shorts(61)</label>
+            </p>
+          </a>
+          <hr />
+          <a href="" id="pat"
+            >+ Pattern
+            <p class="pat1">
+              <input type="checkbox" /> <label>Checks (9,871)</label>
+            </p>
+            <p class="pat1">
+              <input type="checkbox" /> <label>Solid (9,070)</label>
+            </p>
+            <p class="pat1">
+              <input type="checkbox" /> <label>Micro Print (2,957</label>
+            </p>
+            <p class="pat1">
+              <input type="checkbox" /> <label>Textured (1,641)</label>
+            </p>
+          </a>
+          <hr />
+
+          <a href="" id="band"
+            >+ Neckline
+            <p class="band1">
+              <input type="checkbox" /> <label>Band(1)</label>
+            </p>
+          </a>
+          <hr />
+          <a href="" id="char"
+            >+ Charachter
+            <p class="char1">
+              <input type="checkbox" /> <label>Others(192)</label>
+            </p>
+            <p class="char1">
+              <input type="checkbox" /> <label>Hercules(80)</label>
+            </p>
+          </a>
+          <hr />
+
+          <a href="" id="sha"
+            >+ Shape
+            <p class="sha1">
+              <input type="checkbox" /><label for="">Regular(73)</label>
+            </p>
+          </a>
+          <hr />
+          <a href="" id="fab"
+            >+ Fabric
+            <p class="fab1">
+              <input type="checkbox" /><label for="">Cotton</label>
+            </p>
+            <p class="fab1">
+              <input type="checkbox" /><label for="">Linen</label>
+            </p>
+          </a>
+        </div>
+      </div>
+      <div class="right">
+        <p style="color: #a7a7a7">MEN'S</p>
+        <h1 style="font-size: 40px; font-weight: 500; margin-top: -15px">
+          Shirts
+        </h1>
+        <p
+          style="
+            line-height: 15px;
+            text-align: left;
+            padding-left: 100px;
+            color: #666666;
+            margin-bottom: 0;
+          "
+        >
+          Boardroom meetings or clubbing nights, stay in style effortlessly with
+          AJIO’s range of men’s shirts. Browse through classic white shirts for
+          men, charming printed shirts, cool denim shirts, quirky shackets and
+          more to get your fashion quotient soaring.+
+        </p>
+        <a
+          href=""
+          style="
+            margin-left: -68%;
+            margin-top: 0;
+            color: #176d93;
+            text-decoration: none;
+            font-size: 15px;
+          "
+          >READ MORE</a
+        >
+        <hr />
+        <div id="flex">
+          <div>38,379 Items Found</div>
+          <div id="grid">
+            <div style="margin-right: 10px; margin-left: 60px; color: grey">
+              Grid
+            </div>
+            <div class="bordericon">
+              <a href=""
+                ><i class="fas fa-grip-lines-vertical" style="color: grey"></i
+              ></a>
+            </div>
+            <!-- <div class="bordericon"><a href=""><i class="fas fa-grip-lines-vertical" style="color:rgb(92, 88, 88);"></i></a></div> -->
+            <div class="bordericon">
+              <a href="" style="font-stretch: expanded">||||</a>
+            </div>
+          </div>
+
+          <div>
+            <p id="icon" style="color: #939393">SORT BY</p>
+            <select id="icon">
+              <option>old fashion</option>
+              <option>Price(Lowest Price)</option>
+              <option>Price(Heighest Price)</option>
+              <option>What's New</option>
+              <option></option>
+            </select>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </section>
+  </body>
+</html>
+<script
+  src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+  data-auto-a11y="true"
+></script>
+<script>
+  var k = true
+  function myFunction1() {
+    var x = document.getElementById('dropdown-content1')
+    if (k == true) {
+      x.style.display = 'block'
+      k = false
+    } else {
+      x.style.display = 'none'
+      k = true
+    }
+  }
+  function myFunction2() {
+    var y = document.getElementById('dropdown-content2')
+    if (k == true) {
+      y.style.display = 'block'
+      k = false
+    } else {
+      y.style.display = 'none'
+      k = true
+    }
+  }
+  function gen(e) {
+    e.preventDefault()
+    var ans = document.getElementById('gen1')
+    ans.style.display = 'block'
+  }
+  function cat(e) {
+    e.preventDefault()
+    var ans = document.getElementById('cat1')
+    if (k == true) {
+      ans.style.display = 'block'
+      k = false
+    } else {
+      ans.style.display = 'none'
+      k = true
+    }
+
+    ans.style.display = 'block'
+  }
+  function dis(e) {
+    e.preventDefault()
+    var ans = document.getElementsByClassName('dis1')
+
+    for (let i = 0; i < ans.length; i++) {
+      ans[i].style.display = 'block'
+    }
+  }
+  function sf(e) {
+    e.preventDefault()
+    var ans = document.getElementsByClassName('sf1')
+    for (let i = 0; i < ans.length; i++) {
+      ans[i].style.display = 'block'
+    }
+  }
+  function occ(e) {
+    e.preventDefault()
+    var ans = document.getElementsByClassName('occ1')
+    for (let i = 0; i < ans.length; i++) {
+      ans[i].style.display = 'block'
+    }
+  }
+  function col(e) {
+    e.preventDefault()
+    var ans = document.getElementsByClassName('col1')
+    for (let i = 0; i < ans.length; i++) {
+      ans[i].style.display = 'block'
+    }
+  }
+  function bra(e) {
+    e.preventDefault()
+    var ans = document.getElementsByClassName('bra1')
+    for (let i = 0; i < ans.length; i++) {
+      ans[i].style.display = 'block'
+    }
+  }
+  function pri(e) {
+    e.preventDefault()
+    var ans = document.getElementsByClassName('pri1')
+    for (let i = 0; i < ans.length; i++) {
+      ans[i].style.display = 'block'
+    }
+  }
+
+  document.getElementById('cat').addEventListener('click', cat)
+  document.getElementById('pri').addEventListener('click', pri)
+  document.getElementById('bra').addEventListener('click', bra)
+  document.getElementById('occ').addEventListener('click', occ)
+  document.getElementById('dis').addEventListener('click', dis)
+  document.getElementById('col').addEventListener('click', col)
+  document.getElementById('sf').addEventListener('click', sf)
+  document.getElementById('gen').addEventListener('click', gen)
+
+  // window.onclick = function(event) {
+  //   if (!event.target.matches('.dropbtn')) {
+  //     var dropdowns = document.getElementsByClassName("dropdown-content");
+  //     var i;
+  //     for (i = 0; i < dropdowns.length; i++) {
+  //       var openDropdown = dropdowns[i];
+  //       if (openDropdown.classList.contains('show')) {
+  //         openDropdown.classList.remove('show');
+  //       }
+  //     }
+  //   }
+  // }
+  function slee(e) {
+    e.preventDefault()
+    var ans = document.getElementsByClassName('slee1')
+    for (let i = 0; i < ans.length; i++) {
+      ans[i].style.display = 'block'
+    }
+  }
+  function pat(e) {
+    e.preventDefault()
+    var ans = document.getElementsByClassName('pat1')
+    for (let i = 0; i < ans.length; i++) {
+      ans[i].style.display = 'block'
+    }
+  }
+  function band(e) {
+    e.preventDefault()
+    var ans = document.getElementsByClassName('band1')
+    for (let i = 0; i < ans.length; i++) {
+      ans[i].style.display = 'block'
+    }
+  }
+  function sha(e) {
+    e.preventDefault()
+    var ans = document.getElementsByClassName('sha1')
+    for (let i = 0; i < ans.length; i++) {
+      ans[i].style.display = 'block'
+    }
+  }
+  function fab(e) {
+    e.preventDefault()
+    var ans = document.getElementsByClassName('fab1')
+    for (let i = 0; i < ans.length; i++) {
+      ans[i].style.display = 'block'
+    }
+  }
+  function char(e) {
+    e.preventDefault()
+    var ans = document.getElementsByClassName('char1')
+    for (let i = 0; i < ans.length; i++) {
+      ans[i].style.display = 'block'
+    }
+  }
+  function colo(e) {
+    e.preventDefault()
+    var ans = document.getElementsByClassName('colo1')
+    for (let i = 0; i < ans.length; i++) {
+      ans[i].style.display = 'block'
+    }
+  }
+  document.getElementById('slee').addEventListener('click', slee)
+  document.getElementById('pat').addEventListener('click', pat)
+  document.getElementById('band').addEventListener('click', band)
+  document.getElementById('sha').addEventListener('click', sha)
+  document.getElementById('fab').addEventListener('click', fab)
+  document.getElementById('char').addEventListener('click', char)
+  document.getElementById('col').addEventListener('click', col)
+</script>

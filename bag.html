@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link
+      rel="icon"
+      href="https://image.apktoy.com/img/e6/com.ril.ajio/icon.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+      data-auto-a11y="true"
+    ></script>
+    <link rel="stylesheet" href="/styles/styleIN.css" />
+<link rel="stylesheet" href="./styles/styleC.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="blue"></div>
+    <div id="NAVIGATION">
+
+   
+   
+     </div>
+    <div id="main-nav">
+
+    </div>
+
+    <!-- MID PAGE -->
+
+    <div class="img-div">
+      <img
+        src="https://assets.ajio.com/medias/sys_master/images/images/h90/h24/34734725922846/17082021-M-cartpagebanner-relianceone.jpg"
+      />
+    </div>
+    <div id="CRT">
+      <div id="BL">
+        <div id="CRT_SW">
+          <div id="M">
+            <h2>My Bag</h2>
+            <p id="Counnt">(0 items)</p>
+          </div>
+          <div id="BRT"></div>
+        </div>
+        <div id="TOT_SW">
+          <div>
+            <div><p>What is AJIO Wallet?</p></div>
+            <div><h4>Order Details</h4></div>
+            <div class="BR">
+              <div>Bag total</div>
+              <div id="AA"></div>
+            </div>
+            <div class="BR">
+              <div>Bag Discount</div>
+              <div id="AB" style="color: rgb(176, 153, 117)"></div>
+            </div>
+            <div class="BR">
+              <div>Delivery</div>
+              <div id="AC" style="color: rgb(176, 153, 117)">FREE</div>
+            </div>
+            <div class="BR" id="bold">
+              <div>Total Amount</div>
+              <div id="AD"></div>
+            </div>
+            <button id="BUT" onclick="store()">PROCEED TO SHIPPING</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="EMP">
+        <div>
+          <p class="empty-msg">Your Shopping Bag is Empty!!</p>
+        </div>
+
+        <div class="cart-div">
+          <a href="Index.html" class="cart-shopping">Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <ul>
+        <li><i class="fas fa-shield-alt"></i></li>
+        <li class="ln">SECURE PAYMENTS</li>
+        <li><i class="fas fa-rupee-sign"></i></li>
+        <li class="ln">CASH ON DELIVERY</li>
+        <li><i class="fas fa-check-circle"></i></li>
+        <li class="ln">ASSURED QUALITY</li>
+        <li><i class="fas fa-sync-alt"></i></li>
+        <li class="ln">EASY RETURNS</li>
+      </ul>
+    </div>
+    <!-- whdqohd -->
+<div id="BOTTOMBAR">
+   
+              <div id="blk"></div>
+          <div id="float">
+            <div><h1>Please <a href="/home.html">Sign in</a> First</h1></div>
+          </div>
+
+    </div>
+  </body>
+</html>
+<script src="./comp/cartjs.js"></script>
+<script type="module">
+  // navbar
+  import navbar from './comp/NAV.js'
+  document.getElementById('NAVIGATION').innerHTML = navbar()
+  // bottombar
+  import bottom from './comp/bottom.js'
+  document.getElementById('BOTTOMBAR').innerHTML = bottom()
+</script>
+<script>
+    var abb = []
+
+  function cato(arr) {
+    console.log(5)
+    var len = abb.length
+    if (len != 0) {
+      abb = []
+    }
+    abb.push(arr)
+    let ABB = JSON.stringify(abb)
+    localStorage.setItem('CATO', ABB)
+    window.open('catologue.html')
+  }
+  function BB() {
+  if (localStorage.getItem('ADDRES') !== undefined) {
+    var azz = localStorage.getItem('ADDRES')
+    azz = JSON.parse(azz)
+
+    setTimeout(function () {
+  var ar = document.getElementById('user_info')
+  ar.innerHTML = 'Hi ' + azz[0].Name
+ var arz = document.getElementById('s_IN')
+  arz.innerHTML = 'Sign Out'
+}, 200)
+  }
+}
+BB()
+</script>
+<script type="text/javascript" src="./data/DATA.js"></script>

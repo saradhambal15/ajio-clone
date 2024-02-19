@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .upper{
+            margin: auto;
+            background-color: white;
+            height: 30px;
+            padding-top: 50px;
+            padding-left: 10%;
+
+        }
+        .upper a{
+            text-decoration: none;
+            font-size: small;
+            font-weight: 400;
+            color: #afacac;
+        }
+         .left{
+            width: 20%;
+            margin-left: 10%;
+            background-color: white;
+            height: 100vh;
+            float: left;
+        }
+         .right{
+            width: 60%;
+            margin-left: 1%;
+            background-color: white;
+            height: 100vh;
+            float: left;
+            text-align: center;
+            
+        }
+        .left div{
+            margin: 10px;
+            height: 40px;
+        }
+        .clear{
+            clear: both;
+        }
+        #flex{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin: auto;
+        }
+        #flex div{
+            flex-basis: 25%;
+        }
+        #grid div{
+            float: left;
+        }
+        .bordericon{
+            border: 1px solid rgb(92, 88, 88);
+            padding: 2px 15px;
+        }
+        #icon{
+            float: left;
+            margin: 2px;
+        }
+
+       .right hr{
+            background-color: rgb(245, 238, 238);
+            opacity: 0.3;
+            margin: 20px;
+        }
+
+        /* ---------dropdown------- */
+
+.dropbtn {
+  
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: large;
+  font-weight: 700;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  height: 300px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+    </style>
+</head>
+<body style="margin: 0;">
+    <div class="upper">
+        <a href="">HOME /</a>
+        <a href="">MEN /</a>
+        <a href="">WESTERN WEAR /</a>
+        <a href="">SHIRTS</a>
+    </div>
+    <section id="mid">
+        <div class="left">
+            <div>
+                <button onclick="myFunction()" class="dropbtn">Refine By <i class="fas fa-chevron-down" style="margin-left: 121px;"></i></button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="">+ Gender</a>
+                  <a href="">+ Category</a>
+                  <a href="">+ Price</a>
+                  <a href="">+ Occasion</a>
+                  <a href="">+ Discount</a>
+                  <a href="">+ Size & Colors</a>
+                  <a href="">+ Fit</a>
+                </div> 
+              
+              
+            </div>
+            
+            <div>
+                <button onclick="myFunction()" class="dropbtn" style="margin-left: 10px; font-weight: 500;">More Fillers<i class="fas fa-chevron-down" style="margin-left: 107px;"></i></button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="">+ Sleeve</a>
+                  <a href="">+ Pattern</a>
+                  <a href="">+ Feature</a>
+                  <a href="">+ Neckline</a>
+                  <a href="">+ Charachter</a>
+                  <a href="">+ Collar</a>
+                  <a href="">+ Shape</a>
+                  <a href="">+ Fabric</a>
+
+                </div> 
+            </div>
+        </div>
+        <div class="right">
+         <p style="color: #a7a7a7;">MEN'S</p>
+         <h1 style="font-size: 40px; font-weight: 500; margin-top: -15px;">Shirts</h1>
+         <p style="line-height: 15px; text-align: left;padding-left: 100px;color: #666666; margin-bottom: 0;">Boardroom meetings or clubbing nights, stay in style effortlessly with AJIO’s range of men’s shirts. Browse through classic white shirts for men, charming printed shirts, 
+             cool denim shirts, quirky shackets and more to get your fashion quotient soaring.+</p>
+             <a href="" style="margin-left: -68%;margin-top: 0;color: #176d93;text-decoration: none;font-size: 15px;">READ MORE</a>
+             <hr/>
+             <div id="flex">
+                 <div>38,379 Items Found</div>
+                 <div id="grid">
+                     <div style="margin-right: 10px;margin-left: 60px; color: grey;">Grid</div>
+                     <div class="bordericon"><a href=""><i class="fas fa-grip-lines-vertical" style="color: grey;"></i></a></div>
+                     <!-- <div class="bordericon"><a href=""><i class="fas fa-grip-lines-vertical" style="color:rgb(92, 88, 88);"></i></a></div> -->
+                     <div class="bordericon"><a href="" style="font-stretch: expanded;">||||</a></div>
+                    </div>
+                 
+                 <div>
+                     <p id="icon" style="color: #939393;">SORT BY</p>
+                     <select id="icon">
+                         <option>abhishek</option>
+                         <option>Price(Lowest Price)</option>
+                         <option>Price(Heighest Price)</option>
+                         <option>What's New</option>
+                         <option></option>
+                     </select>
+                 </div>
+             </div>
+             <hr/>
+        </div>
+      
+
+    </section>
+   
+</body>
+</html>
+<script
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+      data-auto-a11y="true"
+    >
+</script>
+<script>
+    function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
